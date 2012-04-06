@@ -1,0 +1,30 @@
+<% title "Deliveries" %>
+
+<h2><%= @campaign.name %></h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Email</th>
+    <th>Token</th>
+    <th>Sent at</th>
+    <th>Seen at</th>
+    <th>Clicked at</th>
+    <th>Unsubscribed at</th>
+    <th>Bounced at</th>
+    <th>IP Address</th>
+    <th>User Agent</th>
+  </tr>
+  <% for delivery in @deliveries %>
+    <tr>
+      <td><%= delivery.email %></td>
+      <td><%= delivery.token %></td>
+      <td><%= delivery.created_at %></td>
+      <td><%= delivery.seen_at %></td>
+      <td><%= delivery.clicked_at %></td>
+      <td><%= delivery.unsubscribed_at %></td>
+      <td><%= delivery.bounced_at %></td>
+      <td><%= delivery.ip_address %></td>
+      <td><%= delivery.user_agent %></td>
+    </tr>
+  <% end %>
+</table>

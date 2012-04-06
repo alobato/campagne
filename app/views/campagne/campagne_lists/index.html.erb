@@ -1,0 +1,16 @@
+<% title "Lists" %>
+
+<p><%= link_to "New List", new_campagne_campagne_list_path %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for list in @lists %>
+    <tr>
+      <td><%= list.name %></td>
+      <td><%= link_to "Import", import_campagne_campagne_list_path(list) %></td>
+      <td><%= link_to "Show", list %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,12 @@
+<% title "Import contacts" %>
+
+<h2><%= @list.name %></h2>
+
+<%= form_tag import_campagne_campagne_list_path(@list) do %>
+  <p>
+    <%= text_area_tag 'emails', nil, :style => 'width:600px;height:400px' %>
+  </p>
+  <p><%= submit_tag 'Import' %></p>
+<% end %>
+
+<p><%= link_to "Back", campagne_campagne_lists_path %></p>

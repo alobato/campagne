@@ -1,0 +1,20 @@
+<% title "Campaigns" %>
+
+<p><%= link_to "New Campaign", new_campagne_campagne_campaign_path %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Subject</th>
+  </tr>
+  <% for campaign in @campaigns %>
+    <tr>
+      <td><%= campaign.name %></td>
+      <td><%= campaign.subject %></td>
+      <td><%= link_to "Preview", preview_campagne_campagne_campaign_path(campaign) %></td>
+      <td><%= link_to "Deliveries", deliveries_campagne_campagne_campaign_path(campaign) %></td>
+      <td><%= link_to "Show", campaign %></td>
+      <td><%= link_to "Edit", edit_campagne_campagne_campaign_path(campaign) %></td>
+    </tr>
+  <% end %>
+</table>

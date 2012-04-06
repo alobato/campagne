@@ -1,0 +1,17 @@
+<% title "List" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @list.name %>
+</p>
+
+<p>
+  <strong>Emails:</strong><br />
+  <% @list.campagne_contacts.each do |contact| %>
+  <%= contact.email %><br />
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "View All", campagne_campagne_lists_path %>
+</p>

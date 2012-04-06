@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag :campagne %>
+    <%= javascript_include_tag :campagne %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    
+    <div id="nav">
+      <%= link_to 'Lists', campagne_campagne_lists_path %> |
+      <%= link_to 'Campaings', campagne_campagne_campaigns_path %>
+    </div>
+    
+    <div id="container">
+      <% if notice %>
+        <%= content_tag :div, notice, :id => "flash_notice" %>
+      <% end %>
+
+      <% if alert %>
+        <%= content_tag :div, alert, :id => "flash_alert" %>
+      <% end %>
+
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

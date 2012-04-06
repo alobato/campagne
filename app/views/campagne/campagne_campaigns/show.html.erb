@@ -1,0 +1,35 @@
+<% title "Campaign" %>
+
+<%= form_tag schedule_campagne_campagne_campaign_path(@campaign) do %>
+  <%= datetime_select("schedule", 'at', :default => Time.now) %>
+  <%= submit_tag 'Schedule' %>
+<% end %>
+
+<p>
+  <%= link_to "Preview", preview_campagne_campagne_campaign_path(@campaign) %> |
+  <%= link_to "Deliveries", deliveries_campagne_campagne_campaign_path(@campaign) %> | 
+  <%= link_to "Edit", edit_campagne_campagne_campaign_path(@campaign) %> |
+  <%= link_to "View All", campagne_campagne_campaigns_path %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @campaign.name %>
+</p>
+<p>
+  <strong>Subject:</strong>
+  <%= @campaign.subject %>
+</p>
+<p>
+  <strong>Lists:</strong><br/>
+  <% @campaign.campagne_lists.each do |list| %>
+    <%= list.name %><br/>
+  <% end %>
+</p>
+<p>
+  <strong>Body:</strong><br />
+  <pre>
+<%= raw(@campaign.body) %>
+  </pre>
+</p>
+
