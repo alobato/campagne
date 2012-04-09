@@ -9,7 +9,8 @@ Campagne uses resque-scheduler to schedule deliveries.
 1) Install redis and run redis-server
 -------------------------------------
 
-    [http://redis.io](http://redis.io)
+[http://redis.io](http://redis.io)
+
     $ redis-server
 
 
@@ -44,7 +45,8 @@ Run migration.
     $ rake db:migrate
 
 
-5) Access
+5) Start
+--------
 
 Now start your application:
 
