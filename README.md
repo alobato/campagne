@@ -48,7 +48,7 @@ Run migration.
 5) Start
 --------
 
-Start Resque workes and resque-scheduler:
+Start Resque workers and resque-scheduler:
 
     $ rake resque:start_workers
     $ rake resque:start_scheduler
