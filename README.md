@@ -48,6 +48,11 @@ Run migration.
 5) Start
 --------
 
+Start Resque workes and resque-scheduler:
+
+    $ rake resque:start_workers
+    $ rake resque:start_scheduler
+
 Now start your application:
 
     $ rails s
