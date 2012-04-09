@@ -12,6 +12,17 @@
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </p>
+  <p>
+    <strong>You can use these:</strong><br /><br />
+
+    <strong>||WB||</strong> - <a href="http://www.webopedia.com/TERM/W/Web_beacon.html" target="_blank">Web Beacon</a><br /><br />
+
+    <strong>||UNSUB||</strong> - Unsubscribe link<br />
+    Ex.: &lt;a href="||UNSUB||"&gt;Click here to unsubscribe&lt;/a&gt;<br /><br />
+    
+    <strong>||LINK||</strong> - Link<br />
+    Ex.: &lt;a href="||LINK||http://www.mysite.com/products/1"&gt;Click to buy&lt;/a&gt;
+  </p>
   <p>    
     <%= hidden_field_tag "campagne_campagne_campaign[campagne_list_ids][]", nil%>
     <% Campagne::CampagneList.all.each do |list| %>
