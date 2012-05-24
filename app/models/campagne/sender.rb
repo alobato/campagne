@@ -9,7 +9,7 @@ module Campagne
         :to => email.downcase,
         :subject => subject,
         :body => email_body,
-        :content_type => 'text/html; charset=UTF-8'#,
+        :content_type => 'text/html; charset=UTF-8',
         :'Return-Path' => "bounce+#{token}@#{Rails.application.config.campagne_domain}",
         :'List-Unsubscribe' => "<mailto:unsubscribe-#{token}@#{Rails.application.config.campagne_domain}>, <#{Rails.application.config.campagne_base_url}/campagne/unsubscribe/#{token}>"
       }).deliver
