@@ -1,5 +1,3 @@
-<% title "Campaign" %>
-
 <%= form_tag schedule_campagne_campagne_campaign_path(@campaign) do %>
   <%= datetime_select("schedule", 'at', :default => Time.now) %>
   <%= submit_tag 'Schedule' %>

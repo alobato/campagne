@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   namespace :campagne do
     root to: 'campagne_lists#index'
-    mount Resque::Server.new, at: 'resque'
     resources :campagne_lists do
       member do
         get 'import'

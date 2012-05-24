@@ -8,16 +8,5 @@ module Campagne
       end
     end
 
-    initializer "campagne.load_static_assets" do |app|
-      app.middleware.use ::ActionDispatch::Static, "#{root}/public"
-    end
-
-    initializer "campagne.load_resque_config" do |app|
-      require 'resque/server'
-      Resque::Server.use(Rack::Auth::Basic)
-      require 'resque_scheduler'
-      require 'resque_scheduler/server'
-    end
-
   end
 end
